@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Angular JS Project</title>
+        <meta charset='utf-8'/>
+        <link rel="stylesheet" type="text/css" href="./test.html_files/styles.css">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/default.min.css">
+    </head>
+    <body>
+        <article>
+            <h1 id="angular-js-project">Angular JS Project</h1>
+<p>This is a basic boilerplate to kickstart your next Angular 1.x project, along with some useful tools. </p>
+<hr>
+<h2 id="includes">Includes</h2>
+<ul>
+<li>Basic Node.JS server</li><li>Angular App Folder Structure</li><li>Widely Used Dependencies<ul>
+<li><a href="https://angular-ui.github.io/bootstrap/">angular-ui-bootstrap</a></li><li><a href="https://ui-router.github.io/">angular-ui-router</a></li><li><a href="http://getbootstrap.com/">bootstrap</a></li><li><a href="http://fontawesome.io/">font-awesome</a></li></ul>
+</li><li>Widely Used Developer Dependencies<ul>
+<li><a href="https://github.com/angular/dgeni">dgeni</a></li><li><a href="http://eslint.org/">eslint</a></li><li><a href="http://gulpjs.com/">gulp</a></li><li><a href="https://jasmine.github.io/">jasmine-core</a></li><li><a href="https://karma-runner.github.io">karma</a></li></ul>
+</li><li>Unit Testing Suite ( Karma and Jasmine )</li><li>Coverage Tool</li><li>Linter Tool ( EsLint )</li><li>Documentation Generator ( Dgeni )</li></ul>
+<hr>
+<h2 id="installation">Installation</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<ol>
+<li>Install Node.JS through <a href="https://nodejs.org/en/download/">official site</a>  or (better) <a href="https://github.com/creationix/nvm">nvm</a></li><li>Install/Update npm<pre><code>npm install npm@latest -g
+</code></pre></li></ol>
+<hr>
+<h3 id="project-scaffold">Project scaffold</h3>
+<pre><code>git clone angular 
+cd angular 
+npm install
+</code></pre><hr>
+<h2 id="structure">Structure</h2>
+<ul>
+<li>app<ul>
+<li>app.js</li><li>common</li><li>feature<ul>
+<li>featureController.js</li><li>featureController.spec.js</li><li>featureService.js</li><li>featureService.spec.js</li><li>featureView.html</li></ul>
+</li></ul>
+</li><li>assets<ul>
+<li>css</li><li>img</li></ul>
+</li><li>coverage</li><li>docs<ul>
+<li>app</li><li>build</li><li>config</li><li>content</li></ul>
+</li><li>server.js</li><li>package.json</li><li>karma.conf.js</li><li>gulpfile.js</li><li>.eslintrc.json</li><li>.gitignore</li><li>.eslintignore</li><li>index.html</li></ul>
+<hr>
+<h3 id="explanation">Explanation</h3>
+<ul>
+<li><p><strong>app</strong> folder holds all the app files.
+  <em>app.js</em> file is our main module which will load all the app
+  its feature will be developed in its own folder, separated into a controller, a service, a view and, their tests.
+  common folder holds files (views, services, etc) that ought to be used from many features</p>
+</li><li><p><strong>assets</strong> folder holds static asset files like images and css.</p>
+</li><li><p><strong>coverage</strong> folder holds the report of the coverage tool, navigating to the report folder from a browser will show a view of the test coverage.</p>
+</li><li><strong>docs</strong> folder holds all the files for the documentation generation procedure. Inside <strong>config</strong> folder are the processors that create the documentation and the templates that bind them. <strong>build</strong> folder holds the pre-processed files that holds the logic behind the generation. <strong>app</strong> folder holds the final app which is the generated documentation in which, a server must be started so that it will be accessible from a web browser.</li><li><em>server.js</em> is the file that creates our simple Node.JS server</li><li><em>package.json</em> holds all are npm-based scripts and depend</li><li><em>karma.conf.js</em> holds our karma configuration for test </li><li><em>gulpfile.js</em> holds our gulp tasks that create the documentation</li><li><em>.eslintrc.json</em> holds our configuration for the linter tool</li><li><em>.gitignore</em> holds the rules for the files that we want to exclude from git</li><li><em>.eslintignore</em> holds the rules for the files that we want to exclude from the linter tool</li></ul>
+<hr>
+<h2 id="usage">Usage</h2>
+<h3 id="project-start">Project start</h3>
+<pre><code>node start
+</code></pre><p>Running the above command, you should see a response like that in your shell :
+<em>Express server listening on port 3000</em>
+Now you can navigate with a browser to <a href="http://localhost:3000">http://localhost:3000</a> and see your app running</p>
+<hr>
+<h3 id="test-coverage-start">Test &amp; Coverage start</h3>
+<pre><code>npm run test
+</code></pre><p>Running the above command, you should see a response like that in your shell :
+<img src="test.png" alt="test">
+After that your tests will run and you will see which were successful and which not. After all the tests have run, you should see a response like that in your shell :
+<img src="coverage.png" alt="coverage">
+There you can see a representation of the test coverage right in your shell (you can also navigate to the appropriate url to see the same info in a web-based form)</p>
+<hr>
+<h3 id="linter-start">Linter start</h3>
+<pre><code>npm run lint
+</code></pre><p>Running the above command, you will see the results of your linter. If your code follows all your linter rules, there will be no further output, if not, you should see something like this.
+<img src="linter.png" alt="linter"></p>
+<hr>
+<h3 id="documentation-start">Documentation start</h3>
+<pre><code>npm run doc
+</code></pre><p>Running the above command, you will see the gulp  tasks running which execute the dgeni configuration using your processors. After the whole process is done we can navigate to the output folder and create a server, so that we will be able to navigate to our documentation</p>
+<pre><code>cd docs/app
+lite-server start
+</code></pre><p>After that you should see an output like that in your shell.
+<img src="documentation.png" alt="documentation">
+Navigating to the above urls you will be able to see your generated documentation.</p>
+<hr>
+
+        </article>
+    </body>
+    <!-- MathJax (from CDN) -->
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+    <!-- highlight.js (from CDN) -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</html>
